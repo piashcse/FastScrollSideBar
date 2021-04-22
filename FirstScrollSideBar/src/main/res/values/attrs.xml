@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="backgroundColor" format="color|reference" />
+    <attr name="strokeColor" format="color|reference" />
+    <attr name="textColor" format="color|reference" />
+    <attr name="textSize" format="dimension" />
+    <attr name="selectTextColor" format="color|reference" />
+    <attr name="selectTextSize" format="dimension" />
+    <attr name="hintTextColor" format="color|reference" />
+    <attr name="hintTextSize" format="dimension" />
+    <attr name="hintCircleRadius" format="dimension" />
+    <attr name="hintCircleColor" format="color|reference" />
+    <attr name="hintShape" format="enum" >
+        <enum name="circle" value="0" />
+        <enum name="rectangle" value="1" />
+        <enum name="rectangleWithCornerRadius" value="2" />
+    </attr>
+    <attr name="waveColor" format="color|reference" />
+    <attr name="waveRadius" format="dimension" />
+    <attr name="contentPadding" format="dimension" />
+    <attr name="barPadding" format="dimension" />
+    <attr name="barWidth" format="dimension" />
+    <declare-styleable name="WaveSideBarView">
+        <attr name="backgroundColor" />
+        <attr name="strokeColor" />
+        <attr name="textColor" />
+        <attr name="textSize" />
+        <attr name="selectTextColor" />
+        <attr name="selectTextSize" />
+        <attr name="hintTextColor" />
+        <attr name="hintTextSize" />
+        <attr name="hintCircleRadius" />
+        <attr name="hintCircleColor" />
+        <attr name="waveColor" />
+        <attr name="waveRadius" />
+        <attr name="contentPadding" />
+        <attr name="barPadding" />
+        <attr name="barWidth" />
+    </declare-styleable>
+
+    <declare-styleable name="SideBarView">
+        <attr name="backgroundColor" />
+        <attr name="strokeColor" />
+        <attr name="textColor" />
+        <attr name="textSize" />
+        <attr name="selectTextColor" />
+        <attr name="selectTextSize" />
+        <attr name="hintTextColor" />
+        <attr name="hintTextSize" />
+        <attr name="hintCircleRadius" />
+        <attr name="hintShape" />
+        <attr name="hintCircleColor" />
+        <attr name="contentPadding" />
+        <attr name="barPadding" />
+        <attr name="barWidth" />
+    </declare-styleable>
+</resources>
