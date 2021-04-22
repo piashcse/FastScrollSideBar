@@ -15,6 +15,6 @@ allprojects {
 ### Step 2. Add the dependency
 ```
 dependencies {
-	        implementation 'com.github.piashcse:FastScrollSideBar:Tag'
+	        implementation 'com.github.piashcse:FastScrollSideBar:0.0.1'
 	}
 ```
