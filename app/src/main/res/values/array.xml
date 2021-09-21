@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="slide_bar_value_list">
-        <item>\u2606</item>
         <item>\u0023</item>
         <item>A</item>
         <item>B</item>

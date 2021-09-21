@@ -18,5 +18,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:hintTextSize="30sp"
+        app:hintShape="rectangleWithCornerRadius"
+        app:hintCircleColor="@color/black_alpha_30"
+        app:hintTextColor="@color/white" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.graphics.Typeface;
 import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.util.TypedValue;
@@ -190,6 +191,7 @@ public class SideBarView extends View {
 			float textY = TextDrawUtils.getTextBaseLineByCenter(getMeasuredHeight() / 2.0f, mTextPaint, mHintTextSize);
 			mTextPaint.setColor(mHintTextColor);
 			mTextPaint.setTextSize(mHintTextSize);
+			mTextPaint.setTypeface(Typeface.DEFAULT_BOLD);
 			mTextPaint.setTextAlign(Paint.Align.CENTER);
 			canvas.drawText(target, circleCenterX, textY, mTextPaint);
 		}
