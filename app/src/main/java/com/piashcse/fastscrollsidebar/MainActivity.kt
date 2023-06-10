@@ -19,12 +19,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-
         itemAdapter = ItemAdapter(fillData(arrayOf()))
         binding.recyclerview.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = itemAdapter
-            addItemDecoration(TitleDecoration(TitleDecoration.TitleAttributes(context).setBackgroundColor(R.color.purple_200)))
+            addItemDecoration(
+                TitleDecoration(
+                    TitleDecoration.TitleAttributes(context).setBackgroundColor(R.color.purple_200)
+                )
+            )
         }
 
         binding.sideBar.setOnLetterChangeListener { letter ->
@@ -43,7 +46,31 @@ class MainActivity : AppCompatActivity() {
     private fun fillData(list: Array<String>): List<ItemEntity<String>> {
         val sortList: MutableList<ItemEntity<String>> = ArrayList()
         // for(data in list)
-        for (data in arrayListOf("hello", "ok", "abacus", "routin", "dog")) {
+        for (data in arrayListOf(
+            "London",
+            "Dhaka",
+            "Beijing",
+            "Tokyo",
+            "Berlin",
+            "Moscow",
+            "Riyadh",
+            "Canberra",
+            "Vienna",
+            "Rome",
+            "Jakarta",
+            "Islamabad",
+            "Manila",
+            "Lisbon",
+            "Kabul",
+            "Nairobi",
+            "Tripoli",
+            "Kuala Lumpur",
+            "Mexico City",
+            "Kathmandu",
+            "Panama City",
+            "Doha",
+            "Seoul"
+        )) {
             val item: ItemEntity<String> = ItemEntity()
             item.value = data
             val letters = data.substring(0, 1).toUpperCase()
