@@ -25,7 +25,7 @@ repositories {
 ```
 dependencies {
     ...
-    implementation 'com.github.piashcse:FastScrollSideBar:0.0.2'
+    implementation 'com.github.piashcse:FastScrollSideBar:1.0.0'
 }
 ```
 
