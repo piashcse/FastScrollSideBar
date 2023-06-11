@@ -10,7 +10,10 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private lateinit var itemAdapter: ItemAdapter
+    private val itemAdapter: ItemAdapter by lazy {
+        ItemAdapter(fillData())
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -19,7 +22,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        itemAdapter = ItemAdapter(fillData(arrayOf()))
         binding.recyclerview.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = itemAdapter
@@ -43,44 +45,23 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun fillData(list: Array<String>): List<ItemEntity<String>> {
+    private fun fillData(): List<ItemEntity<String>> {
         val sortList: MutableList<ItemEntity<String>> = ArrayList()
-        // for(data in list)
-        for (data in arrayListOf(
-            "London",
-            "Dhaka",
-            "Beijing",
-            "Tokyo",
-            "Berlin",
-            "Moscow",
-            "Riyadh",
-            "Canberra",
-            "Vienna",
-            "Rome",
-            "Jakarta",
-            "Islamabad",
-            "Manila",
-            "Lisbon",
-            "Kabul",
-            "Nairobi",
-            "Tripoli",
-            "Kuala Lumpur",
-            "Mexico City",
-            "Kathmandu",
-            "Panama City",
-            "Doha",
-            "Seoul"
-        )) {
-            val item: ItemEntity<String> = ItemEntity()
-            item.value = data
-            val letters = data.substring(0, 1).toUpperCase()
-            if (letters.matches("[A-Z]".toRegex())) {
-                item.setSortLetters(letters.toUpperCase())
-            } else {
-                item.setSortLetters("#")
+        Locale.getAvailableLocales()
+            .map { it.displayCountry }
+            .filter { it.trim().isNotBlank() }
+            .distinct()
+            .sorted().forEach {
+                val item: ItemEntity<String> = ItemEntity()
+                item.value = it
+                val letters = it.substring(0, 1).toUpperCase()
+                if (letters.matches("[A-Z]".toRegex())) {
+                    item.setSortLetters(letters.toUpperCase())
+                } else {
+                    item.setSortLetters("#")
+                }
+                sortList.add(item)
             }
-            sortList.add(item)
-        }
         return sortList
     }
 }
